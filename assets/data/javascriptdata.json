@@ -1,0 +1,634 @@
+[
+  {
+    "name": "let",
+    "category": "Variables",
+    "description": "Declares a block-scoped, re-assignable local variable.",
+    "status": "(ES6)",
+    "syntax": "let variableName = value;",
+    "example": "let message = \"Hello\";"
+  },
+  {
+    "name": "const",
+    "category": "Variables",
+    "description": "Declares a block-scoped, read-only named constant.",
+    "status": "(ES6)",
+    "syntax": "const CONSTANT_NAME = value;",
+    "example": "const PI = 3.14159;"
+  },
+  {
+    "name": "var",
+    "category": "Variables",
+    "description": "Declares a function-scoped variable. Avoid using in modern JavaScript.",
+    "status": "Deprecated (ES1)",
+    "syntax": "var variableName = value;",
+    "example": "var oldVar = 10;"
+  },
+  {
+    "name": "String",
+    "category": "Data Types",
+    "description": "Represents textual data.",
+    "status": "(Core JS)",
+    "syntax": "\"text\"",
+    "example": "let name = \"Alice\"; let greeting = 'Hello';"
+  },
+  {
+    "name": "Number",
+    "category": "Data Types",
+    "description": "Represents both integer and floating-point numbers.",
+    "status": "(Core JS)",
+    "syntax": "123",
+    "example": "let age = 30; let price = 19.99;"
+  },
+  {
+    "name": "Boolean",
+    "category": "Data Types",
+    "description": "Represents a logical entity and can have two values: true or false.",
+    "status": "(Core JS)",
+    "syntax": "true or false",
+    "example": "let isActive = true; let hasPermission = false;"
+  },
+  {
+    "name": "Array",
+    "category": "Data Types",
+    "description": "Stores collections of items.",
+    "status": "(Core JS)",
+    "syntax": "[item1, item2, ...] or new Array()",
+    "example": "let fruits = ['apple', 'banana', 'cherry']; let numbers = new Array(1, 2, 3);"
+  },
+  {
+    "name": "Object",
+    "category": "Data Types",
+    "description": "Stores collections of key-value pairs.",
+    "status": "(Core JS)",
+    "syntax": "{ key: value, ... } or new Object()",
+    "example": "let person = { name: 'Bob', age: 25 }; let emptyObj = new Object();"
+  },
+  {
+    "name": "Null",
+    "category": "Data Types",
+    "description": "Represents the intentional absence of any object value.",
+    "status": "(Core JS)",
+    "syntax": "null",
+    "example": "let result = null;"
+  },
+  {
+    "name": "Undefined",
+    "category": "Data Types",
+    "description": "Indicates that a variable has been declared but has not yet been assigned a value.",
+    "status": "(Core JS)",
+    "syntax": "undefined",
+    "example": "let city; // city is undefined"
+  },
+  {
+    "name": "Symbol",
+    "category": "Data Types",
+    "description": "A unique and immutable data type often used to add unique property keys to an object.",
+    "status": "(ES6)",
+    "syntax": "Symbol('description')",
+    "example": "const id = Symbol('id'); let obj = { [id]: 1 };"
+  },
+  {
+    "name": "BigInt",
+    "category": "Data Types",
+    "description": "Represents whole numbers larger than 2^53 - 1.",
+    "status": "(ES2020)",
+    "syntax": "10n",
+    "example": "const bigNum = 1234567890123456789012345678901234567890n;"
+  },
+  {
+    "name": "if/else",
+    "category": "Conditional Statements",
+    "description": "Executes a block of code if a specified condition is true; otherwise, it executes another block.",
+    "status": "(Core JS)",
+    "syntax": "if (condition) { // code } else { // code }",
+    "example": "if (score > 90) { console.log(\"Excellent!\"); } else { console.log(\"Good.\"); }"
+  },
+  {
+    "name": "switch",
+    "category": "Conditional Statements",
+    "description": "Evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case.",
+    "status": "(Core JS)",
+    "syntax": "switch (expression) { case value1: // code break; default: // code }",
+    "example": "let day = \"Mon\"; switch (day) { case \"Mon\": console.log(\"Monday\"); break; default: console.log(\"Other day\"); }"
+  },
+  {
+    "name": "Ternary Operator",
+    "category": "Conditional Statements",
+    "description": "A shorthand for the if/else statement, often used for simple conditional assignments.",
+    "status": "(Core JS)",
+    "syntax": "condition ? exprIfTrue : exprIfFalse;",
+    "example": "let status = (age >= 18) ? \"Adult\" : \"Minor\";"
+  },
+  {
+    "name": "for loop",
+    "category": "Loops",
+    "description": "Repeats a block of code a specified number of times.",
+    "status": "(Core JS)",
+    "syntax": "for (initialization; condition; increment) { // code }",
+    "example": "for (let i = 0; i < 5; i++) { console.log(i); }"
+  },
+  {
+    "name": "while loop",
+    "category": "Loops",
+    "description": "Repeats a block of code as long as a specified condition is true.",
+    "status": "(Core JS)",
+    "syntax": "while (condition) { // code }",
+    "example": "let count = 0; while (count < 3) { console.log(count); count++; }"
+  },
+  {
+    "name": "do...while loop",
+    "category": "Loops",
+    "description": "Repeats a block of code at least once, and then as long as a specified condition is true.",
+    "status": "(Core JS)",
+    "syntax": "do { // code } while (condition);",
+    "example": "let i = 0; do { console.log(i); i++; } while (i < 3);"
+  },
+  {
+    "name": "for...of",
+    "category": "Loops",
+    "description": "Iterates over iterable objects (like Arrays, Strings, Maps, Sets, etc.)",
+    "status": "(ES6)",
+    "syntax": "for (variable of iterable) { // code }",
+    "example": "const arr = [1, 2, 3]; for (const val of arr) { console.log(val); }"
+  },
+  {
+    "name": "for...in",
+    "category": "Loops",
+    "description": "Iterates over enumerable properties of an object.",
+    "status": "(Core JS)",
+    "syntax": "for (variable in object) { // code }",
+    "example": "const obj = {a: 1, b: 2}; for (const key in obj) { console.log(key + \": \" + obj[key]); }"
+  },
+  {
+    "name": "Array.forEach()",
+    "category": "Loops",
+    "description": "Executes a provided function once for each array element.",
+    "status": "(ES5)",
+    "syntax": "array.forEach(function(item, index, array) { // code });",
+    "example": "let nums = [1, 2, 3]; nums.forEach(num => console.log(num));"
+  },
+  {
+    "name": "Function Declaration",
+    "category": "Functions",
+    "description": "Defines a reusable block of code.",
+    "status": "(Core JS)",
+    "syntax": "function functionName(parameters) { // code }",
+    "example": "function greet(name) { return 'Hello, ' + name; }"
+  },
+  {
+    "name": "Arrow Function",
+    "category": "Functions",
+    "description": "A concise way to write functions, especially useful for short, single-line functions.",
+    "status": "(ES6)",
+    "syntax": "(parameters) => { // code }",
+    "example": "const add = (a, b) => a + b;"
+  },
+  {
+    "name": "Function Expression",
+    "category": "Functions",
+    "description": "Defines a function as part of an expression, often assigned to a variable.",
+    "status": "(Core JS)",
+    "syntax": "const functionName = function(parameters) { // code };",
+    "example": "const multiply = function(a, b) { return a * b; }"
+  },
+  {
+    "name": "console.log()",
+    "category": "Console",
+    "description": "Outputs messages to the web console for debugging.",
+    "status": "(Core JS)",
+    "syntax": "console.log(message);",
+    "example": "console.log(\"Debug message\");"
+  },
+  {
+    "name": "console.error()",
+    "category": "Console",
+    "description": "Outputs an error message to the web console.",
+    "status": "(Core JS)",
+    "syntax": "console.error(message);",
+    "example": "console.error(\"Something went wrong!\");"
+  },
+  {
+    "name": "console.warn()",
+    "category": "Console",
+    "description": "Outputs a warning message to the web console.",
+    "status": "(Core JS)",
+    "syntax": "console.warn(message);",
+    "example": "console.warn(\"This is a warning.\");"
+  },
+  {
+    "name": "document.getElementById()",
+    "category": "DOM Manipulation",
+    "description": "Returns the element that has the ID attribute with the specified value.",
+    "status": "(Core JS)",
+    "syntax": "document.getElementById(\"id\");",
+    "example": "const myDiv = document.getElementById(\"main\");"
+  },
+  {
+    "name": "document.querySelector()",
+    "category": "DOM Manipulation",
+    "description": "Returns the first element that matches a specified CSS selector(s) in the document.",
+    "status": "(ES5)",
+    "syntax": "document.querySelector(\"selector\");",
+    "example": "const firstDiv = document.querySelector(\"div\");"
+  },
+  {
+    "name": "document.querySelectorAll()",
+    "category": "DOM Manipulation",
+    "description": "Returns a static (non-live) NodeList representing a list of the document's elements that match the specified group of selectors.",
+    "status": "(ES5)",
+    "syntax": "document.querySelectorAll(\"selector\");",
+    "example": "const allParagraphs = document.querySelectorAll(\"p\");"
+  },
+  {
+    "name": "document.createElement()",
+    "category": "DOM Manipulation",
+    "description": "Creates the HTML element specified by tagName.",
+    "status": "(Core JS)",
+    "syntax": "document.createElement(\"tagName\");",
+    "example": "const newDiv = document.createElement(\"div\");"
+  },
+  {
+    "name": "element.appendChild()",
+    "category": "DOM Manipulation",
+    "description": "Adds a node to the end of the list of children of a specified parent node.",
+    "status": "(Core JS)",
+    "syntax": "parentNode.appendChild(childNode);",
+    "example": "document.body.appendChild(newDiv);"
+  },
+  {
+    "name": "element.removeChild()",
+    "category": "DOM Manipulation",
+    "description": "Removes a child node from the DOM.",
+    "status": "(Core JS)",
+    "syntax": "parentNode.removeChild(childNode);",
+    "example": "myDiv.removeChild(childElement);"
+  },
+  {
+    "name": "element.innerHTML",
+    "category": "DOM Manipulation",
+    "description": "Sets or returns the HTML content (inner HTML) of an element.",
+    "status": "(Core JS)",
+    "syntax": "element.innerHTML = \"content\";",
+    "example": "myDiv.innerHTML = '<h1>Welcome!</h1>';"
+  },
+  {
+    "name": "element.textContent",
+    "category": "DOM Manipulation",
+    "description": "Sets or returns the text content of the specified node, and all its descendants.",
+    "status": "(ES3)",
+    "syntax": "element.textContent = \"text\";",
+    "example": "myDiv.textContent = 'Just text here.';"
+  },
+  {
+    "name": "element.addEventListener()",
+    "category": "DOM Manipulation",
+    "description": "Attaches an event handler to the specified element.",
+    "status": "(Core JS)",
+    "syntax": "element.addEventListener(event, handler);",
+    "example": "button.addEventListener(click, () => console.log(Clicked!));"
+  },
+  {
+    "name": "element.removeEventListener()",
+    "category": "DOM Manipulation",
+    "description": "Removes an event handler that has been attached with the addEventListener() method.",
+    "status": "(Core JS)",
+    "syntax": "element.removeEventListener(event, handler);",
+    "example": "button.removeEventListener(click, myHandler);"
+  },
+  {
+    "name": "Assignment Operator",
+    "category": "Operators",
+    "description": "Assigns a value to a variable.",
+    "status": "(Core JS)",
+    "syntax": "variable = value;",
+    "example": "let x = 10;"
+  },
+  {
+    "name": "Addition Operator",
+    "category": "Operators",
+    "description": "Adds two numbers or concatenates two strings.",
+    "status": "(Core JS)",
+    "syntax": "a + b;",
+    "example": "let sum = 5 + 3; let str = \"Hello\" + \" World\";"
+  },
+  {
+    "name": "Subtraction Operator",
+    "category": "Operators",
+    "description": "Subtracts two numbers.",
+    "status": "(Core JS)",
+    "syntax": "a - b;",
+    "example": "let diff = 10 - 4;"
+  },
+  {
+    "name": "Multiplication Operator",
+    "category": "Operators",
+    "description": "Multiplies two numbers.",
+    "status": "(Core JS)",
+    "syntax": "a * b;",
+    "example": "let product = 5 * 6;"
+  },
+  {
+    "name": "Division Operator",
+    "category": "Operators",
+    "description": "Divides two numbers.",
+    "status": "(Core JS)",
+    "syntax": "a / b;",
+    "example": "let quotient = 20 / 4;"
+  },
+  {
+    "name": "Modulo Operator",
+    "category": "Operators",
+    "description": "Returns the remainder of a division.",
+    "status": "(Core JS)",
+    "syntax": "a % b;",
+    "example": "let remainder = 10 % 3; // 1"
+  },
+  {
+    "name": "Equality Operator (==)",
+    "category": "Operators",
+    "description": "Compares two values for equality after type conversion (coercion).",
+    "status": "(Core JS)",
+    "syntax": "a == b;",
+    "example": "console.log(5 == \"5\"); // true"
+  },
+  {
+    "name": "Strict Equality Operator (===)",
+    "category": "Operators",
+    "description": "Compares two values for equality without type conversion.",
+    "status": "(Core JS)",
+    "syntax": "a === b;",
+    "example": "console.log(5 === \"5\"); // false"
+  },
+  {
+    "name": "Inequality Operator (!=)",
+    "category": "Operators",
+    "description": "Compares two values for inequality after type conversion.",
+    "status": "(Core JS)",
+    "syntax": "a != b;",
+    "example": "console.log(5 != \"5\"); // false"
+  },
+  {
+    "name": "Strict Inequality Operator (!==)",
+    "category": "Operators",
+    "description": "Compares two values for inequality without type conversion.",
+    "status": "(Core JS)",
+    "syntax": "a !== b;",
+    "example": "console.log(5 !== \"5\"); // true"
+  },
+  {
+    "name": "Greater Than Operator",
+    "category": "Operators",
+    "description": "Checks if the left operand is greater than the right operand.",
+    "status": "(Core JS)",
+    "syntax": "a > b;",
+    "example": "console.log(10 > 5); // true"
+  },
+  {
+    "name": "Less Than Operator",
+    "category": "Operators",
+    "description": "Checks if the left operand is less than the right operand.",
+    "status": "(Core JS)",
+    "syntax": "a < b;",
+    "example": "console.log(5 < 10); // true"
+  },
+  {
+    "name": "Greater Than or Equal To",
+    "category": "Operators",
+    "description": "Checks if the left operand is greater than or equal to the right operand.",
+    "status": "(Core JS)",
+    "syntax": "a >= b;",
+    "example": "console.log(10 >= 10); // true"
+  },
+  {
+    "name": "Less Than or Equal To",
+    "category": "Operators",
+    "description": "Checks if the left operand is less than or equal to the right operand.",
+    "status": "(Core JS)",
+    "syntax": "a <= b;",
+    "example": "console.log(5 <= 5); // true"
+  },
+  {
+    "name": "Logical AND (&&)",
+    "category": "Operators",
+    "description": "Returns true if both operands are true.",
+    "status": "(Core JS)",
+    "syntax": "condition1 && condition2;",
+    "example": "if (age > 18 && hasLicense) { // code }"
+  },
+  {
+    "name": "Logical OR (||)",
+    "category": "Operators",
+    "description": "Returns true if at least one operand is true.",
+    "status": "(Core JS)",
+    "syntax": "condition1 || condition2;",
+    "example": "if (isWeekend || isHoliday) { // code }"
+  },
+  {
+    "name": "Logical NOT (!)",
+    "category": "Operators",
+    "description": "Inverts the boolean value of its operand.",
+    "status": "(Core JS)",
+    "syntax": "!condition;",
+    "example": "if (!isAdmin) { // code }"
+  },
+  {
+    "name": "Increment Operator",
+    "category": "Operators",
+    "description": "Increments its operand by one.",
+    "status": "(Core JS)",
+    "syntax": "variable++; or ++variable;",
+    "example": "let x = 5; x++; // x is now 6"
+  },
+  {
+    "name": "Decrement Operator",
+    "category": "Operators",
+    "description": "Decrements its operand by one.",
+    "status": "(Core JS)",
+    "syntax": "variable--; or --variable;",
+    "example": "let y = 10; y--; // y is now 9"
+  },
+  {
+    "name": "String.length",
+    "category": "String Methods",
+    "description": "Returns the length of a string.",
+    "status": "(Core JS)",
+    "syntax": "string.length;",
+    "example": "let text = \"Hello\"; console.log(text.length); // 5"
+  },
+  {
+    "name": "String.toUpperCase()",
+    "category": "String Methods",
+    "description": "Converts a string to uppercase letters.",
+    "status": "(Core JS)",
+    "syntax": "string.toUpperCase();",
+    "example": "let text = \"hello\"; console.log(text.toUpperCase()); // \"HELLO\""
+  },
+  {
+    "name": "String.toLowerCase()",
+    "category": "String Methods",
+    "description": "Converts a string to lowercase letters.",
+    "status": "(Core JS)",
+    "syntax": "string.toLowerCase();",
+    "example": "let text = \"HELLO\"; console.log(text.toLowerCase()); // \"hello\""
+  },
+  {
+    "name": "String.trim()",
+    "category": "String Methods",
+    "description": "Removes whitespace from both ends of a string.",
+    "status": "(ES5)",
+    "syntax": "string.trim();",
+    "example": "let text = \"   hello   \"; console.log(text.trim()); // \"hello\""
+  },
+  {
+    "name": "String.substring()",
+    "category": "String Methods",
+    "description": "Extracts characters from a string, between two specified indices.",
+    "status": "(Core JS)",
+    "syntax": "string.substring(startIndex, endIndex);",
+    "example": "let text = 'JavaScript'; console.log(text.substring(0, 4)); // 'Java'"
+  },
+  {
+    "name": "String.includes()",
+    "category": "String Methods",
+    "description": "Checks if a string contains another string.",
+    "status": "(ES6)",
+    "syntax": "string.includes(searchString, position);",
+    "example": "let text = \"Hello World\"; console.log(text.includes(\"World\")); // true"
+  },
+  {
+    "name": "Array.push()",
+    "category": "Array Methods",
+    "description": "Adds one or more elements to the end of an array and returns the new length of the array.",
+    "status": "(Core JS)",
+    "syntax": "array.push(element1, ...);",
+    "example": "let arr = [1, 2]; arr.push(3); // arr is now [1, 2, 3]"
+  },
+  {
+    "name": "Array.pop()",
+    "category": "Array Methods",
+    "description": "Removes the last element from an array and returns that element.",
+    "status": "(Core JS)",
+    "syntax": "array.pop();",
+    "example": "let arr = [1, 2, 3]; let last = arr.pop(); // last is 3, arr is [1, 2]"
+  },
+  {
+    "name": "Array.shift()",
+    "category": "Array Methods",
+    "description": "Removes the first element from an array and returns that removed element.",
+    "status": "(Core JS)",
+    "syntax": "array.shift();",
+    "example": "let arr = [1, 2, 3]; let first = arr.shift(); // first is 1, arr is [2, 3]"
+  },
+  {
+    "name": "Array.unshift()",
+    "category": "Array Methods",
+    "description": "Adds one or more elements to the beginning of an array and returns the new length of the array.",
+    "status": "(Core JS)",
+    "syntax": "array.unshift(element1, ...);",
+    "example": "let arr = [2, 3]; arr.unshift(1); // arr is now [1, 2, 3]"
+  },
+  {
+    "name": "Array.map()",
+    "category": "Array Methods",
+    "description": "Creates a new array populated with the results of calling a provided function on every element in the calling array.",
+    "status": "(ES5)",
+    "syntax": "array.map(function(item, index, array) { // return new value });",
+    "example": "let nums = [1, 2]; let doubled = nums.map(num => num * 2); // doubled is [2, 4]"
+  },
+  {
+    "name": "Array.filter()",
+    "category": "Array Methods",
+    "description": "Creates a new array with all elements that pass the test implemented by the provided function.",
+    "status": "(ES5)",
+    "syntax": "array.filter(function(item, index, array) { // return true/false });",
+    "example": "let nums = [1, 2, 3]; let evens = nums.filter(num => num % 2 === 0); // evens is [2]"
+  },
+  {
+    "name": "Array.reduce()",
+    "category": "Array Methods",
+    "description": "Executes a reducer function on each element of the array, resulting in a single output value.",
+    "status": "(ES5)",
+    "syntax": "array.reduce(function(accumulator, item, index, array) { // return next accumulator value }, initialValue);",
+    "example": "let nums = [1, 2, 3]; let sum = nums.reduce((acc, num) => acc + num, 0); // sum is 6"
+  },
+  {
+    "name": "Array.find()",
+    "category": "Array Methods",
+    "description": "Returns the value of the first element in the provided array that satisfies the provided testing function.",
+    "status": "(ES6)",
+    "syntax": "array.find(function(item, index, array) { // return true/false });",
+    "example": "let users = [{id: 1, name: 'A'}, {id: 2, name: 'B'}]; let user = users.find(u => u.id === 2); // user is {id: 2, name: 'B'}"
+  },
+  {
+    "name": "Array.indexOf()",
+    "category": "Array Methods",
+    "description": "Returns the first index at which a given element can be found in the array, or -1 if it is not present.",
+    "status": "(Core JS)",
+    "syntax": "array.indexOf(searchElement, fromIndex);",
+    "example": "let arr = ['a', 'b', 'c']; console.log(arr.indexOf('b')); // 1"
+  },
+  {
+    "name": "try...catch",
+    "category": "Error Handling",
+    "description": "Handles potential errors in a block of code.",
+    "status": "(ES3)",
+    "syntax": "try { // code that might throw an error } catch (error) { // code to handle the error }",
+    "example": "try { throw new Error('Oops!'); } catch (e) { console.error(e.message); }"
+  },
+  {
+    "name": "setTimeout",
+    "category": "Asynchronous",
+    "description": "Executes a function, or evaluates an expression, after a specified delay (in milliseconds).",
+    "status": "(Core JS)",
+    "syntax": "setTimeout(function, delay);",
+    "example": "setTimeout(() => console.log('Delayed!'), 1000);"
+  },
+  {
+    "name": "setInterval",
+    "category": "Asynchronous",
+    "description": "Repeatedly executes a function, or evaluates an expression, after a specified delay.",
+    "status": "(Core JS)",
+    "syntax": "setInterval(function, delay);",
+    "example": "let count = 0; setInterval(() => { console.log(count++); }, 1000);"
+  },
+  {
+    "name": "Promise",
+    "category": "Asynchronous",
+    "description": "An object representing the eventual completion or failure of an asynchronous operation and its resulting value.",
+    "status": "(ES6)",
+    "syntax": "new Promise((resolve, reject) => { // async code });",
+    "example": "new Promise(res => setTimeout(() => res('Done'), 500));"
+  },
+  {
+    "name": ".then()",
+    "category": "Asynchronous",
+    "description": "Handles the successful completion of a Promise.",
+    "status": "(ES6)",
+    "syntax": "promise.then(onFulfilled, onRejected);",
+    "example": "myPromise.then(data => console.log(data));"
+  },
+  {
+    "name": ".catch()",
+    "category": "Asynchronous",
+    "description": "Handles the rejection (error) of a Promise.",
+    "status": "(ES6)",
+    "syntax": "promise.catch(onRejected);",
+    "example": "myPromise.catch(error => console.error(error));"
+  },
+  {
+    "name": ".finally()",
+    "category": "Asynchronous",
+    "description": "Executes a callback when the promise is settled (either fulfilled or rejected).",
+    "status": "(ES2018)",
+    "syntax": "promise.finally(onFinally);",
+    "example": "myPromise.finally(() => console.log(\"Finished.\"));"
+  },
+  {
+    "name": "async/await",
+    "category": "Asynchronous",
+    "description": "Syntactic sugar built on Promises, making asynchronous code easier to write and read.",
+    "status": "(ES2017)",
+    "syntax": "async functionName() { await promise; }",
+    "example": "async function fetchData() { const response = await fetch('data.json'); const data = await response.json(); console.log(data); }"
+  }
+]

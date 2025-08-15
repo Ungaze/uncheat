@@ -1,0 +1,55 @@
+{
+  "html": {
+    "title": "HTML Cheat Sheet",
+    "tags": [
+      { "tag": "<html>", "group": "Structural", "description": "The root element of an HTML page.", "example": "<html>...</html>" },
+      { "tag": "<head>", "group": "Meta", "description": "Contains meta-information about the HTML page.", "example": "<head><title>My Page</title></head>" },
+      { "tag": "<body>", "group": "Structural", "description": "Contains all the content of an HTML document.", "example": "<body><h1>Hello</h1></body>" },
+      { "tag": "<h1> to <h6>", "group": "Text Content", "description": "Defines HTML headings.", "example": "<h1>This is a heading</h1>" },
+      { "tag": "<p>", "group": "Text Content", "description": "Defines a paragraph.", "example": "<p>This is a paragraph.</p>" },
+      { "tag": "<a>", "group": "Links", "description": "Defines a hyperlink.", "example": "<a href=\"https://example.com\">Link</a>" },
+      { "tag": "<img>", "group": "Media", "description": "Embeds an image.", "example": "<img src=\"image.jpg\" alt=\"My Image\">" },
+      { "tag": "<ul>, <ol>", "group": "Lists", "description": "Defines an unordered or ordered list.", "example": "<ul><li>Item 1</li></ul>" },
+      { "tag": "<li>", "group": "Lists", "description": "Defines a list item.", "example": "<li>List Item</li>" },
+      { "tag": "<div>", "group": "Structural", "description": "A generic container for flow content.", "example": "<div>Container</div>" },
+      { "tag": "<span>", "group": "Structural", "description": "An inline container for phrasing content.", "example": "<span>Text</span>" },
+      { "tag": "<button>", "group": "Forms & Interaction", "description": "A clickable button.", "example": "<button>Click Me</button>" },
+      { "tag": "<form>", "group": "Forms & Interaction", "description": "Defines an HTML form for user input.", "example": "<form action=\"/submit\"></form>" },
+      { "tag": "<input>", "group": "Forms & Interaction", "description": "Defines an input field.", "example": "<input type=\"text\" name=\"username\">" }
+    ]
+  },
+  "css": {
+    "title": "CSS Cheat Sheet",
+    "selectors": [
+      { "selector": "element", "group": "Basic Selectors", "description": "Selects all elements of a given type.", "example": "p { color: blue; }" },
+      { "selector": ".class", "group": "Basic Selectors", "description": "Selects elements with a specific class.", "example": ".my-class { font-size: 16px; }" },
+      { "selector": "#id", "group": "Basic Selectors", "description": "Selects an element with a specific ID.", "example": "#my-id { border: 1px solid black; }" }
+    ],
+    "properties": [
+      { "property": "color", "group": "Typography", "description": "Sets the color of the text.", "example": "color: #333;" },
+      { "property": "font-size", "group": "Typography", "description": "Sets the size of the font.", "example": "font-size: 18px;" },
+      { "property": "background-color", "group": "Background", "description": "Sets the background color of an element.", "example": "background-color: #f0f0f0;" },
+      { "property": "margin", "group": "Box Model", "description": "Sets the margin space outside an element.", "example": "margin: 10px 20px;" },
+      { "property": "padding", "group": "Box Model", "description": "Sets the padding space inside an element.", "example": "padding: 10px;" },
+      { "property": "display", "group": "Layout", "description": "Specifies the display behavior of an element.", "example": "display: flex;" },
+      { "property": "flex-direction", "group": "Layout", "description": "Sets the direction of flex items.", "example": "flex-direction: column;" },
+      { "property": "justify-content", "group": "Layout", "description": "Aligns flex items along the main axis.", "example": "justify-content: center;" },
+      { "property": "align-items", "group": "Layout", "description": "Aligns flex items along the cross axis.", "example": "align-items: center;" },
+      { "property": "border", "group": "Visual Effects", "description": "Sets the border around an element.", "example": "border: 1px solid black;" },
+      { "property": "box-shadow", "group": "Visual Effects", "description": "Adds a shadow effect to an element.", "example": "box-shadow: 2px 2px 5px rgba(0,0,0,0.2);" }
+    ]
+  },
+  "js": {
+    "title": "JavaScript Cheat Sheet",
+    "concepts": [
+      { "concept": "Variables", "group": "Fundamentals", "description": "Store data values.", "example": "let name = 'John';\nconst PI = 3.14;\nvar age = 30;" },
+      { "concept": "Functions", "group": "Fundamentals", "description": "Blocks of code that can be called.", "example": "function greet(name) {\n  return `Hello, ${name}`;\n}\nconst multiply = (a, b) => a * b;" },
+      { "concept": "Conditionals", "group": "Control Flow", "description": "Execute code based on conditions.", "example": "if (age > 18) {\n  console.log('Adult');\n} else {\n  console.log('Minor');\n}" },
+      { "concept": "Loops", "group": "Control Flow", "description": "Execute a block of code repeatedly.", "example": "for (let i = 0; i < 5; i++) {\n  console.log(i);\n}\n\nlet count = 0;\nwhile (count < 3) {\n  console.log(count);\n  count++;\n}" },
+      { "concept": "Arrays", "group": "Data Structures", "description": "Ordered collections of data.", "example": "const colors = ['red', 'green', 'blue'];\ncolors.push('yellow');" },
+      { "concept": "Objects", "group": "Data Structures", "description": "Collections of key-value pairs.", "example": "const user = {\n  name: 'Jane',\n  age: 25\n};\nconsole.log(user.name);" },
+      { "concept": "DOM Manipulation", "group": "Browser APIs", "description": "Changing the content and style of an HTML page.", "example": "const element = document.getElementById('my-id');\nelement.innerHTML = 'New Content';" },
+      { "concept": "Event Listeners", "group": "Browser APIs", "description": "Listening for user interactions like clicks.", "example": "document.querySelector('button').addEventListener('click', () => {\n  alert('Button clicked!');\n});" }
+    ]
+  }
+}
