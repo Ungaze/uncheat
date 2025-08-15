@@ -141,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
             this.#holders = holders;
             this.#dataBase = dataBase;
         }
-
         displayCards(string){
             // Everytime this is called it checks for a string supplied
             // The search bar call this method providing the searched string
@@ -178,6 +177,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     cards[card].toggle(!string);
                 }
 // display holders and group holders
+            }
+            // Handle the attachment of cards
+            if (this.#display.grouped) {
+                for (const card of cards) {
+                    holder[cards[card].category].appendChild(holder[card]);
+                }
+                for (const hol of holder) {
+                    holder[hol].classList.add('hide');
+                }
+                for (const hol of cat) {
+                    holder[hol].classList.remove('hide')
+                }
+            } else {
+                for (const card of cards) {
+                    holder.appendChild(cards[card]);
+                }
             }
         }
 
@@ -292,6 +307,12 @@ document.addEventListener('DOMContentLoaded', () => {
             //     categoryHolders.push(new CategoryHolder(element))
             // }
             //console.log(this.getChildren());
+        }
+
+        toggle(catList){
+            for (const holder of catList) {
+                this.#categories[holder].toggle();
+            }
         }
     }
 
