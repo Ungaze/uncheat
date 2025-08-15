@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Lets start by creating the language buttons
         for (const lang in masterData){
+            break;
             // Create language buttons and main containers
             const language = masterData[lang];
             language.cards = populateCards(language);
@@ -140,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.#buttons = buttons;
             this.#holders = holders;
             this.#dataBase = dataBase;
+            this.displayCards();
         }
         displayCards(string){
             // Everytime this is called it checks for a string supplied
@@ -157,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cat = new Set();
             // First check if search is activated(with text) or not (called by other function)
             if (string) { // String exist and being used to search. Match string to card contents
+                console.log("SEARCHING");
                 for (const card of data) { // iterate through cards data only
                     let match = false; // set matches to 0
                     for (const key in card) {
@@ -170,12 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     //if (match) cat.push(data[card]);
                     match ? cat.add(data[card]) : null;
                     //const categories = Array.from(new Set(language.data.map(item => item.category)));
+                    console.log(holder.mainHolder)
+                    holder.mainHolder.toggle;
 // display holders and group holders
                 }
-            } else { // String is null, simply display all members for this type
-                for (const card of data) {
-                    cards[card].toggle(!string);
+            } else
+            { // String is null, simply display all members for this type
+                console.log("SKIPPING SEARCH");
+                for (const card in cards) {
+                    cards[card].toggle(true);
                 }
+                holder.toggle();
 // display holders and group holders
             }
             // Handle the attachment of cards
@@ -290,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     class MainHolder extends BaseHolder{
         // this class decides if it is going to display the given cards or pass it to the holders
         #categories = [];
+        children = this.getChildren();
         constructor(lang){
             super();
             const categoryHolders = [];
@@ -308,12 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // }
             //console.log(this.getChildren());
         }
-
-        toggle(catList){
-            for (const holder of catList) {
-                this.#categories[holder].toggle();
-            }
-        }
     }
 
     class CategoryHolder extends BaseHolder{
@@ -327,6 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         toggle(boolean){
+            console.log("cat holder toggled")
             if (boolean&&this.#members) {
                 if (this.#members instanceof TempCard) {
                     if (data[key].toLowerCase().includes(value)) match++
@@ -363,26 +367,21 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const key in cardData) {
                 const element = document.createElement('p');
                 element.classList = `${key}`
-                //element.textContent = `${cardData.key.value}`
-                //console.log(`${element.classList}: ${cardData[key]}`);
-                //console.log(cardData[key]);
-                // switch (key) {
-                //     case 'name':
-                //         console.log(`The name: ${element.classList}: ${cardData[key]}`);
-                //         break;
-                //     case 'category':
-                //         console.log(`The category: ${element.classList}: ${cardData[key]}`);
-                        
-                //         break;
-                //     case 'description':
-                //         console.log(`The description: ${element.classList}: ${cardData[key]}`);
-                        
-                //         break;
-                
-                //     default:
-                //         console.log(`The extra: ${element.classList}: ${cardData[key]}`);
-                //         break;
-                // }
+                element.textContent = `${cardData.key}`
+                switch (key) {
+                    case 'name':
+                        header.appendChild(element);
+                        break;
+                    case 'category':
+                        header.appendChild(element);
+                        break;
+                    case 'description':
+                        body.appendChild(element);
+                        break;
+                    default:
+                        extra.appendChild(element);
+                        break;
+                }
 
             }
             //console.log(cardData);
@@ -390,10 +389,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         toggle(bool){
+            //console.log(this.#element.classList)
+            this.#element.classList.toggle('hide', !bool);
+            //console.log('toggle');
             // toggles between hidden and not
         }
 
-        getElemnt(){
+        getElement(){
             // returns the mother element of this card
         }
 
@@ -861,5 +863,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     //render();
     
-            renderAllCards(currentLang, isGrouped);
+    //renderAllCards(currentLang, isGrouped);
 });
