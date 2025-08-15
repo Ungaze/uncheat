@@ -1,0 +1,176 @@
+[
+    {
+        "name": "a",
+        "category": "Links",
+        "description": "Defines a hyperlink.",
+        "example": "<a href=\"/path/to/page\">Click here</a>"
+    },
+    {
+        "name": "abbr",
+        "category": "Text Formatting",
+        "description": "Defines an abbreviation or an acronym.",
+        "example": "<abbr title=\"Hypertext Markup Language\">HTML</abbr>"
+    },
+    {
+        "name": "article",
+        "category": "Semantics",
+        "description": "Specifies an article or self-contained content.",
+        "example": "<article><h2>Article Title</h2><p>Article content.</p></article>"
+    },
+    {
+        "name": "aside",
+        "category": "Semantics",
+        "description": "Specifies content aside from the page content.",
+        "example": "<aside><h2>Related Links</h2><ul>...</ul></aside>"
+    },
+    {
+        "name": "b",
+        "category": "Text Formatting",
+        "description": "Defines bold text without any extra importance.",
+        "example": "This is a <b>bold</b> word."
+    },
+    {
+        "name": "blockquote",
+        "category": "Text Formatting",
+        "description": "Defines a section that is quoted from another source.",
+        "example": "<blockquote><p>Quote content.</p></blockquote>"
+    },
+    {
+        "name": "body",
+        "category": "Basic Document Structure",
+        "description": "Defines the document's body.",
+        "example": "<body><p>Page content.</p></body>"
+    },
+    {
+        "name": "br",
+        "category": "Basic Document Structure",
+        "description": "Inserts a single line break.",
+        "example": "Line one.<br>Line two."
+    },
+    {
+        "name": "button",
+        "category": "Forms",
+        "description": "Defines a clickable button.",
+        "example": "<button type=\"button\">Click Me</button>"
+    },
+    {
+        "name": "code",
+        "category": "Text Formatting",
+        "description": "Defines a piece of computer code.",
+        "example": "<code>&lt;p&gt;Hello World&lt;/p&gt;</code>"
+    },
+    {
+        "name": "details",
+        "category": "Interactive Elements",
+        "description": "Specifies additional details that the user can open and close.",
+        "example": "<details><summary>Click for more</summary>Details here.</details>"
+    },
+    {
+        "name": "div",
+        "category": "Basic Document Structure",
+        "description": "Defines a division or a section in an HTML document.",
+        "example": "<div>A block-level container.</div>"
+    },
+    {
+        "name": "h1 to h6",
+        "category": "Headings",
+        "description": "Defines HTML headings.",
+        "example": "<h1>Main Heading</h1><h2>Subheading</h2>"
+    },
+    {
+        "name": "head",
+        "category": "Basic Document Structure",
+        "description": "Defines information about the document.",
+        "example": "<head><title>Page Title</title></head>"
+    },
+    {
+        "name": "hr",
+        "category": "Basic Document Structure",
+        "description": "Defines a thematic change in the content.",
+        "example": "Text above.<hr>Text below."
+    },
+    {
+        "name": "html",
+        "category": "Basic Document Structure",
+        "description": "Defines the root of an HTML document.",
+        "example": "<html>...</html>"
+    },
+    {
+        "name": "img",
+        "category": "Images",
+        "description": "Defines an image.",
+        "example": "<img src=\"path/to/img.jpg\" alt=\"Description\">"
+    },
+    {
+        "name": "li",
+        "category": "Lists",
+        "description": "Defines a list item.",
+        "example": "<ul><li>Item 1</li><li>Item 2</li></ul>"
+    },
+    {
+        "name": "link",
+        "category": "Basic Document Structure",
+        "description": "Links to an external resource, like a stylesheet.",
+        "example": "<link rel=\"stylesheet\" href=\"styles.css\">"
+    },
+    {
+        "name": "main",
+        "category": "Semantics",
+        "description": "Specifies the main content of a document.",
+        "example": "<main>The main content.</main>"
+    },
+    {
+        "name": "meta",
+        "category": "Basic Document Structure",
+        "description": "Defines metadata about an HTML document.",
+        "example": "<meta charset=\"UTF-8\">"
+    },
+    {
+        "name": "nav",
+        "category": "Semantics",
+        "description": "Defines navigation links.",
+        "example": "<nav><ul>...</ul></nav>"
+    },
+    {
+        "name": "ol",
+        "category": "Lists",
+        "description": "Defines an ordered list.",
+        "example": "<ol><li>First</li><li>Second</li></ol>"
+    },
+    {
+        "name": "p",
+        "category": "Text Formatting",
+        "description": "Defines a paragraph.",
+        "example": "<p>This is a paragraph.</p>"
+    },
+    {
+        "name": "span",
+        "category": "Basic Document Structure",
+        "description": "An inline container for phrasing content.",
+        "example": "This is a <span>span</span>."
+    },
+    {
+        "name": "table",
+        "category": "Tables",
+        "description": "Defines an HTML table.",
+        "example": "<table>...</table>"
+    },
+    {
+        "name": "td",
+        "category": "Tables",
+        "description": "Defines a standard cell in an HTML table.",
+        "example": "<td>Cell data</td>"
+    },
+    {
+        "name": "tr",
+        "category": "Tables",
+        "description": "Defines a row in an HTML table.",
+        "example": "<tr>...</tr>"
+    },
+    {
+        "name": "ul",
+        "category": "Lists",
+        "description": "Defines an unordered list.",
+        "example": "<ul><li>Bullet point</li></ul>"
+    }
+]

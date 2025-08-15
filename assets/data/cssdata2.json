@@ -1,0 +1,803 @@
+[
+  {
+    "name": "*",
+    "type": "selector",
+    "group": "Selectors",
+    "sub-category": "Universal",
+    "description": "Selects all elements.",
+    "example": "* { margin: 0; padding: 0; }",
+    "detailed_example": "/* Reset margins and padding for all elements */\n* {\n  margin: 0;\n  padding: 0;\n}"
+  },
+  {
+    "name": "::after",
+    "type": "selector",
+    "group": "Selectors",
+    "sub-category": "Pseudo-element",
+    "description": "Inserts generated content immediately after an element's content.",
+    "example": "p::after { content: ' ✔'; }",
+    "detailed_example": "<p>Task</p>\n<style>\np::after {\n  content: ' ✔';\n  margin-left: 6px;\n  color: green;\n}\n</style>"
+  },
+  {
+    "name": "::before",
+    "type": "selector",
+    "group": "Selectors",
+    "sub-category": "Pseudo-element",
+    "description": "Inserts generated content immediately before an element's content.",
+    "example": "p::before { content: 'Note: '; }",
+    "detailed_example": "<p>Important</p>\n<style>\np::before {\n  content: 'Note: ';\n  font-weight: bold;\n  color: red;\n}\n</style>"
+  },
+  {
+    "name": "::first-letter",
+    "type": "selector",
+    "group": "Selectors",
+    "sub-category": "Pseudo-element",
+    "description": "Selects the first letter of the first formatted line of a block-level element.",
+    "example": "p::first-letter { font-size: 2em; }",
+    "detailed_example": "<p>Long paragraph text...</p>\n<style>\np::first-letter {\n  font-size: 2em;\n  font-weight: bold;\n}\n</style>"
+  },
+  {
+    "name": "::first-line",
+    "type": "selector",
+    "group": "Selectors",
+    "sub-category": "Pseudo-element",
+    "description": "Selects the first formatted line of a block-level element.",
+    "example": "p::first-line { text-transform: uppercase; }",
+    "detailed_example": "<p>Intro sentence here.</p>\n<style>\np::first-line {\n  text-transform: uppercase;\n}\n</style>"
+  },
+  {
+    "name": ":active",
+    "type": "selector",
+    "group": "Selectors",
+    "sub-category": "Pseudo-class",
+    "description": "Represents an element (such as a button) while it is being activated (e.g., during the click).",
+    "example": "button:active { transform: translateY(1px); }",
+    "detailed_example": "<button>Press</button>\n<style>\nbutton:active {\n  transform: translateY(1px);\n}\n</style>"
+  },
+  {
+    "name": "@charset",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Charset",
+    "description": "Specifies the character encoding of the stylesheet. Must be at the very start of the file.",
+    "example": "@charset \"UTF-8\";",
+    "detailed_example": "/* Put this at the top of the CSS file */\n@charset \"UTF-8\";\nbody { font-family: system-ui; }"
+  },
+  {
+    "name": "@counter-style",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Counters",
+    "description": "Defines a custom counter style for use with list-style-type.",
+    "example": "@counter-style myList { symbols: 'A' 'B' 'C'; }",
+    "detailed_example": "@counter-style myList {\n  system: cyclic;\n  symbols: \"A\" \"B\" \"C\";\n  suffix: \". \";\n}\n\nol.custom {\n  list-style: myList;\n}"
+  },
+  {
+    "name": "@font-face",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Fonts",
+    "description": "Allows custom fonts to be loaded and used on a web page.",
+    "example": "@font-face { font-family: 'MyFont'; src: url('myfont.woff2') format('woff2'); }",
+    "detailed_example": "@font-face {\n  font-family: 'MyFont';\n  src: url('myfont.woff2') format('woff2');\n  font-weight: 400;\n}\n\nbody { font-family: 'MyFont', sans-serif; }"
+  },
+  {
+    "name": "@import",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Import",
+    "description": "Imports a stylesheet into another stylesheet. Should come before other rules except @charset.",
+    "example": "@import 'reset.css';",
+    "detailed_example": "@import url('reset.css');\n@import url('theme.css') screen and (min-width: 700px);\n\nbody { color: #333; }"
+  },
+  {
+    "name": "@keyframes",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Animation",
+    "description": "Defines keyframes for CSS animations.",
+    "example": "@keyframes fade { from { opacity: 0; } to { opacity: 1; } }",
+    "detailed_example": "@keyframes fade {\n  0% { opacity: 0; transform: translateY(-10px); }\n  100% { opacity: 1; transform: translateY(0); }\n}\n\n.box { animation: fade 0.5s ease forwards; }"
+  },
+  {
+    "name": "@media",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Media Queries",
+    "description": "Applies styles conditionally based on media features like viewport width.",
+    "example": "@media (max-width: 600px) { body { font-size: 14px; } }",
+    "detailed_example": "@media (max-width: 600px) {\n  .container { padding: 12px; }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .animated { animation: none; }\n}"
+  },
+  {
+    "name": "@supports",
+    "type": "at-rule",
+    "group": "At-rules",
+    "sub-category": "Feature Queries",
+    "description": "Applies styles only if the browser supports a given CSS feature.",
+    "example": "@supports (display: grid) { .grid { display: grid; } }",
+    "detailed_example": "@supports (display: grid) {\n  .grid { display: grid; grid-template-columns: 1fr 1fr; }\n} else {\n  .grid { display: block; }\n}"
+  },
+  {
+    "name": "accent-color",
+    "type": "property",
+    "group": "UI",
+    "sub-category": "Form Controls",
+    "description": "Allows styling the accent color for form controls like checkboxes and radio buttons.",
+    "example": "input[type=checkbox] { accent-color: teal; }",
+    "detailed_example": "input[type=\"checkbox\"] {\n  accent-color: #0077cc;\n}\n\n/* Works for radios, progress, range, etc. */"
+  },
+  {
+    "name": "align-content",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Flexbox/Grid",
+    "description": "Aligns a flex container's lines or grid tracks when there is extra space in the cross-axis.",
+    "example": "align-content: space-between;",
+    "detailed_example": ".wrap {\n  display: flex;\n  flex-wrap: wrap;\n  align-content: space-between;\n}"
+  },
+  {
+    "name": "align-items",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Flexbox/Grid",
+    "description": "Aligns items along the cross axis of a flex or grid container.",
+    "example": "align-items: center;",
+    "detailed_example": ".row {\n  display: flex;\n  align-items: center; /* centers children vertically */\n}"
+  },
+  {
+    "name": "align-self",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Flexbox/Grid",
+    "description": "Allows a single item to override the container's align-items value.",
+    "example": "align-self: flex-end;",
+    "detailed_example": ".item { align-self: flex-end; }\n/* Only this .item will align at the end */"
+  },
+  {
+    "name": "all",
+    "type": "property",
+    "group": "Reset",
+    "sub-category": "Shorthand",
+    "description": "Resets all CSS properties on an element (except direction and unicode-bidi) to initial, inherit or unset.",
+    "example": "all: unset;",
+    "detailed_example": ".reset-box { all: unset; display: block; }\n/* Useful to remove browser default styles */"
+  },
+  {
+    "name": "animation",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Shorthand",
+    "description": "Shorthand for setting animation-name, duration, timing-function, delay, iteration-count, direction and fill-mode.",
+    "example": "animation: slide 2s ease-in-out 0s 1 normal forwards;",
+    "detailed_example": "@keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(0); } }\n.box { animation: slide 0.6s ease forwards; }"
+  },
+  {
+    "name": "animation-delay",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Timing",
+    "description": "Specifies when the animation will start after being applied.",
+    "example": "animation-delay: 0.5s;",
+    "detailed_example": ".alert { animation: pulse 1s infinite; animation-delay: 1s; }"
+  },
+  {
+    "name": "animation-direction",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Direction",
+    "description": "Specifies whether the animation should play in reverse on alternate cycles.",
+    "example": "animation-direction: alternate;",
+    "detailed_example": ".box { animation: bounce 1s infinite; animation-direction: alternate; }"
+  },
+  {
+    "name": "animation-duration",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Timing",
+    "description": "Specifies the length of time an animation takes to complete one cycle.",
+    "example": "animation-duration: 2s;",
+    "detailed_example": ".spinner { animation: spin 1s linear infinite; animation-duration: 1s; }"
+  },
+  {
+    "name": "animation-fill-mode",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Fill Mode",
+    "description": "Specifies how a CSS animation applies styles to its target before and after execution.",
+    "example": "animation-fill-mode: forwards;",
+    "detailed_example": ".modal { animation: fade 0.3s ease; animation-fill-mode: forwards; }"
+  },
+  {
+    "name": "animation-iteration-count",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Iteration",
+    "description": "Specifies the number of times an animation should repeat.",
+    "example": "animation-iteration-count: infinite;",
+    "detailed_example": ".pulse { animation: pulse 1s infinite; }"
+  },
+  {
+    "name": "animation-name",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Keyframes",
+    "description": "Specifies the name of the @keyframes at-rule to use for the animation.",
+    "example": "animation-name: fadeIn;",
+    "detailed_example": "@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }\n.element { animation-name: fadeIn; animation-duration: 0.4s; }"
+  },
+  {
+    "name": "animation-play-state",
+    "type": "property",
+    "group": "Animation",
+    "sub-category": "Control",
+    "description": "Sets whether the animation is running or paused.",
+    "example": "animation-play-state: paused;",
+    "detailed_example": ".paused { animation-play-state: paused; }\n/* Useful to pause animations on hover or in reduced motion contexts */"
+  },
+  {
+    "name": "appearance",
+    "type": "property",
+    "group": "UI",
+    "sub-category": "Controls",
+    "description": "Allows control over native styling of UI elements, for example to remove default appearance.",
+    "example": "button { appearance: none; }",
+    "detailed_example": "input[type=\"range\"] { appearance: none; }\n/* Provides a consistent base for custom styling */"
+  },
+  {
+    "name": "aspect-ratio",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Sizing",
+    "description": "Defines a preferred aspect ratio for an element box, used to calculate auto sizes.",
+    "example": "aspect-ratio: 16 / 9;",
+    "detailed_example": ".video { aspect-ratio: 16 / 9; width: 100%; background: #000; }\n/* Keeps height proportional to width */"
+  },
+  {
+    "name": "backdrop-filter",
+    "type": "property",
+    "group": "Effects",
+    "sub-category": "Filters",
+    "description": "Applies graphical effects like blurring or color shifting to the area behind an element.",
+    "example": "backdrop-filter: blur(6px);",
+    "detailed_example": ".frosted { background: rgba(255,255,255,0.4); backdrop-filter: blur(6px); }\n/* Works on elements with background transparency */"
+  },
+  {
+    "name": "background",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Shorthand",
+    "description": "Shorthand to set background-color, image, position, size, repeat, origin, clip, and attachment.",
+    "example": "background: #111 url('bg.jpg') no-repeat center/cover;",
+    "detailed_example": "body {\n  background: linear-gradient(120deg, #fff, #eee), url('texture.png') no-repeat center/cover;\n}\n/* Layered backgrounds are supported */"
+  },
+  {
+    "name": "background-attachment",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Attachment",
+    "description": "Sets whether a background image scrolls with the page or is fixed.",
+    "example": "background-attachment: fixed;",
+    "detailed_example": "header {\n  background-image: url('hero.jpg');\n  background-attachment: fixed;\n  background-size: cover;\n}"
+  },
+  {
+    "name": "background-clip",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Clipping",
+    "description": "Specifies the painting area of the background: border-box, padding-box, or content-box.",
+    "example": "background-clip: padding-box;",
+    "detailed_example": ".badge { background: linear-gradient(#fff,#ddd); background-clip: padding-box; border: 4px solid rgba(255,255,255,0.5); }"
+  },
+  {
+    "name": "background-color",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Color",
+    "description": "Sets the background color of an element.",
+    "example": "background-color: lightblue;",
+    "detailed_example": "section.hero { background-color: #0b74de; color: white; padding: 40px; }"
+  },
+  {
+    "name": "background-image",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Image",
+    "description": "Sets one or more background images for an element.",
+    "example": "background-image: url('pattern.png');",
+    "detailed_example": ".tile { background-image: url('tile.png'); background-repeat: repeat; }\n/* Use multiple comma-separated images for layered backgrounds */"
+  },
+  {
+    "name": "background-origin",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Origin",
+    "description": "Specifies the background positioning area: padding-box, border-box, or content-box.",
+    "example": "background-origin: border-box;",
+    "detailed_example": ".card { background-origin: border-box; padding: 20px; border: 10px solid transparent; }\n/* Affects how background-position is calculated */"
+  },
+  {
+    "name": "background-position",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Position",
+    "description": "Sets the starting position of a background image.",
+    "example": "background-position: center top;",
+    "detailed_example": ".hero { background-image: url('hero.jpg'); background-position: center top; background-size: cover; }"
+  },
+  {
+    "name": "background-repeat",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Repeat",
+    "description": "Specifies whether background images repeat and how.",
+    "example": "background-repeat: no-repeat;",
+    "detailed_example": ".logo { background-image: url('logo.svg'); background-repeat: no-repeat; background-position: left center; }"
+  },
+  {
+    "name": "background-size",
+    "type": "property",
+    "group": "Background",
+    "sub-category": "Size",
+    "description": "Specifies the size of background images (contain, cover, or explicit dimensions).",
+    "example": "background-size: cover;",
+    "detailed_example": ".hero { background-size: cover; background-position: center; }"
+  },
+  {
+    "name": "block-size",
+    "type": "property",
+    "group": "Logical Properties",
+    "sub-category": "Sizing",
+    "description": "Logical shorthand for height in block dimension depending on writing mode.",
+    "example": "block-size: 200px;",
+    "detailed_example": ".panel { block-size: 200px; inline-size: 300px; }\n/* Adapts in vertical/horizontal writing modes */"
+  },
+  {
+    "name": "border",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Shorthand",
+    "description": "Shorthand property to set border-width, border-style, and border-color.",
+    "example": "border: 1px solid #000;",
+    "detailed_example": ".box { border: 2px solid rgba(0,0,0,0.1); border-radius: 6px; padding: 12px; }"
+  },
+  {
+    "name": "border-block",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Logical Properties",
+    "description": "Shorthand to set border properties on block-start and block-end edges (logical).",
+    "example": "border-block: 2px solid red;",
+    "detailed_example": ".note { border-block: 2px solid #ccc; padding-block: 8px; }"
+  },
+  {
+    "name": "border-block-end",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Logical Properties",
+    "description": "Sets border-width, style, and color for the block-end edge.",
+    "example": "border-block-end: 3px solid green;",
+    "detailed_example": ".footer { border-block-end: 3px solid #e0e0e0; }"
+  },
+  {
+    "name": "border-block-start",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Logical Properties",
+    "description": "Sets border properties for the block-start edge.",
+    "example": "border-block-start: 3px solid blue;",
+    "detailed_example": ".header { border-block-start: 3px solid #222; }"
+  },
+  {
+    "name": "border-bottom",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Physical",
+    "description": "Shorthand for setting border-bottom-width, border-bottom-style and border-bottom-color.",
+    "example": "border-bottom: 2px dashed #999;",
+    "detailed_example": ".title { border-bottom: 2px dashed #ddd; padding-bottom: 8px; }"
+  },
+  {
+    "name": "border-bottom-left-radius",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Radius",
+    "description": "Defines the rounding of the bottom-left corner of the border box.",
+    "example": "border-bottom-left-radius: 8px;",
+    "detailed_example": ".card { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }"
+  },
+  {
+    "name": "border-bottom-right-radius",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Radius",
+    "description": "Defines the rounding of the bottom-right corner of the border box.",
+    "example": "border-bottom-right-radius: 8px;",
+    "detailed_example": ".card { border-bottom-right-radius: 8px; }"
+  },
+  {
+    "name": "border-collapse",
+    "type": "property",
+    "group": "Table",
+    "sub-category": "Table Layout",
+    "description": "Sets whether table cell borders are separated or collapsed into a single border.",
+    "example": "border-collapse: collapse;",
+    "detailed_example": "table { border-collapse: collapse; width: 100%; }\nth, td { border: 1px solid #ddd; padding: 8px; }"
+  },
+  {
+    "name": "border-color",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Color",
+    "description": "Sets the color of an element's border on all four sides.",
+    "example": "border-color: red green blue yellow;",
+    "detailed_example": ".box { border-style: solid; border-width: 1px; border-color: #ccc; }"
+  },
+  {
+    "name": "border-image",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Image",
+    "description": "Specifies an image to use as the border around an element.",
+    "example": "border-image: url('border.png') 30 round;",
+    "detailed_example": ".frame { border: 10px solid transparent; border-image: url('frame.png') 30 round; }"
+  },
+  {
+    "name": "border-image-outset",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Image",
+    "description": "Specifies how far the border image area extends beyond the border box.",
+    "example": "border-image-outset: 5px;",
+    "detailed_example": ".decor { border-image-source: url('dec.png'); border-image-outset: 5px; }"
+  },
+  {
+    "name": "border-image-repeat",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Image",
+    "description": "Specifies how the slices of the border-image are adjusted to fit the border widths: stretch, repeat, round, space.",
+    "example": "border-image-repeat: round;",
+    "detailed_example": ".decor { border-image: url('d.png') 30 round; }"
+  },
+  {
+    "name": "border-image-slice",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Image",
+    "description": "Specifies inward offsets for slicing the source image used for the border.",
+    "example": "border-image-slice: 30;",
+    "detailed_example": ".decor { border-image-source: url('d.png'); border-image-slice: 20 fill; }"
+  },
+  {
+    "name": "border-image-source",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Image",
+    "description": "Specifies the image to use instead of the border style.",
+    "example": "border-image-source: url('frame.svg');",
+    "detailed_example": ".frame { border: 10px solid transparent; border-image-source: url('frame.svg'); border-image-slice: 30; }"
+  },
+  {
+    "name": "border-image-width",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Image",
+    "description": "Specifies the widths of the border image regions.",
+    "example": "border-image-width: 10px;",
+    "detailed_example": ".frame { border: 10px solid transparent; border-image: url('frame.png') 30 30 30 30 stretch; }"
+  },
+  {
+    "name": "border-inline",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Logical Properties",
+    "description": "Shorthand for setting border on inline-start and inline-end edges (logical).",
+    "example": "border-inline: 1px solid #ddd;",
+    "detailed_example": ".text { border-inline: 1px solid #eee; padding-inline: 8px; }"
+  },
+  {
+    "name": "border-inline-end",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Logical Properties",
+    "description": "Sets border properties for the inline-end edge.",
+    "example": "border-inline-end: 2px solid red;",
+    "detailed_example": ".menu { border-inline-end: 2px solid #ccc; }"
+  },
+  {
+    "name": "border-inline-start",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Logical Properties",
+    "description": "Sets border properties for the inline-start edge.",
+    "example": "border-inline-start: 2px solid blue;",
+    "detailed_example": ".menu { border-inline-start: 2px solid #ccc; }"
+  },
+  {
+    "name": "border-left",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Physical",
+    "description": "Shorthand for border-left-width, border-left-style and border-left-color.",
+    "example": "border-left: 4px solid #f00;",
+    "detailed_example": ".sidebar { border-left: 1px solid #ddd; padding-left: 12px; }"
+  },
+  {
+    "name": "border-radius",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Radius",
+    "description": "Defines rounding of the element's corners. Can accept up to four values.",
+    "example": "border-radius: 6px;",
+    "detailed_example": ".btn { border-radius: 6px; padding: 10px 14px; }\n/* For different corners: border-radius: 4px 8px 4px 8px; */"
+  },
+  {
+    "name": "border-right",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Physical",
+    "description": "Shorthand for border-right-width, border-right-style and border-right-color.",
+    "example": "border-right: 1px solid #ccc;",
+    "detailed_example": ".list-item { border-right: 1px solid #eee; }"
+  },
+  {
+    "name": "border-spacing",
+    "type": "property",
+    "group": "Table",
+    "sub-category": "Table Layout",
+    "description": "Specifies the distance between the borders of adjacent table cells. Only applies when border-collapse: separate.",
+    "example": "border-spacing: 8px 12px;",
+    "detailed_example": "table { border-collapse: separate; border-spacing: 8px 12px; }"
+  },
+  {
+    "name": "border-style",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Style",
+    "description": "Specifies the style of the border (solid, dashed, dotted, none, etc.).",
+    "example": "border-style: dashed;",
+    "detailed_example": ".box { border-style: solid; border-width: 1px; border-color: #ccc; }"
+  },
+  {
+    "name": "border-top",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Physical",
+    "description": "Shorthand for border-top-width, border-top-style and border-top-color.",
+    "example": "border-top: 2px solid #000;",
+    "detailed_example": ".header { border-top: 2px solid #eee; padding-top: 12px; }"
+  },
+  {
+    "name": "border-width",
+    "type": "property",
+    "group": "Border",
+    "sub-category": "Width",
+    "description": "Specifies the width of the border. Accepts one to four values.",
+    "example": "border-width: 1px 2px 3px 4px;",
+    "detailed_example": ".box { border-style: solid; border-width: 1px 2px; }"
+  },
+  {
+    "name": "bottom",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Positioning",
+    "description": "Specifies the bottom offset of a positioned element (relative to its containing block).",
+    "example": "bottom: 10px;",
+    "detailed_example": ".fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; }"
+  },
+  {
+    "name": "box-decoration-break",
+    "type": "property",
+    "group": "Box",
+    "sub-category": "Decoration",
+    "description": "Specifies how element fragments' backgrounds, padding, etc., are applied across lines, columns, or page breaks.",
+    "example": "box-decoration-break: clone;",
+    "detailed_example": ".pill { background: #eee; box-decoration-break: clone; padding: 4px 8px; }\n/* Prevents split backgrounds across line breaks */"
+  },
+  {
+    "name": "box-shadow",
+    "type": "property",
+    "group": "Effects",
+    "sub-category": "Shadow",
+    "description": "Adds one or more shadows to an element's box.",
+    "example": "box-shadow: 0 2px 6px rgba(0,0,0,0.2);",
+    "detailed_example": ".card { box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-radius: 8px; }"
+  },
+  {
+    "name": "break-after",
+    "type": "property",
+    "group": "Paged Media",
+    "sub-category": "Breaks",
+    "description": "Adjusts page/column/region breaks after an element when printing or paged media.",
+    "example": "break-after: page;",
+    "detailed_example": "h1 { break-after: page; }\n/* Forces a page break after H1 in print */"
+  },
+  {
+    "name": "break-before",
+    "type": "property",
+    "group": "Paged Media",
+    "sub-category": "Breaks",
+    "description": "Adjusts page/column/region breaks before an element.",
+    "example": "break-before: avoid;",
+    "detailed_example": ".chapter { break-before: page; }\n/* Start each chapter on a new page in print */"
+  },
+  {
+    "name": "break-inside",
+    "type": "property",
+    "group": "Paged Media",
+    "sub-category": "Breaks",
+    "description": "Adjusts page/column/region breaks inside an element.",
+    "example": "break-inside: avoid;",
+    "detailed_example": ".card { break-inside: avoid; }\n/* Prevent content from being split across columns/pages */"
+  },
+  {
+    "name": "caption-side",
+    "type": "property",
+    "group": "Table",
+    "sub-category": "Captions",
+    "description": "Specifies the placement of a table caption (top or bottom).",
+    "example": "caption-side: bottom;",
+    "detailed_example": "table { caption-side: bottom; }\ncaption { font-weight: bold; }"
+  },
+  {
+    "name": "caret-color",
+    "type": "property",
+    "group": "Text",
+    "sub-category": "Cursor",
+    "description": "Specifies the color of the text input cursor (caret).",
+    "example": "caret-color: auto;",
+    "detailed_example": "input { caret-color: #07c; }\ntextarea { caret-color: red; }"
+  },
+  {
+    "name": "clear",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Floats",
+    "description": "Specifies whether an element can be next to floating elements or must be moved down.",
+    "example": "clear: both;",
+    "detailed_example": ".clearfix::after { content: ''; display: table; clear: both; }\n/* Common clearfix pattern */"
+  },
+  {
+    "name": "clip",
+    "type": "property",
+    "group": "Visual Formatting",
+    "sub-category": "Clipping",
+    "description": "Deprecated: defines a clipping region. Use clip-path instead.",
+    "example": "clip: rect(0 50px 50px 0);",
+    "detailed_example": ".old-clip { position: absolute; clip: rect(0, 100px, 100px, 0); }\n/* Prefer clip-path in modern code */"
+  },
+  {
+    "name": "clip-path",
+    "type": "property",
+    "group": "Visual Formatting",
+    "sub-category": "Clipping & Masking",
+    "description": "Creates a clipping region that determines what part of an element is shown.",
+    "example": "clip-path: circle(50% at 50% 50%);",
+    "detailed_example": ".avatar { clip-path: circle(50% at 50% 50%); width: 64px; height: 64px; }\n/* Useful for non-rectangular shapes */"
+  },
+  {
+    "name": "color",
+    "type": "property",
+    "group": "Text",
+    "sub-category": "Color",
+    "description": "Specifies the foreground color (usually text color) of an element.",
+    "example": "color: #333;",
+    "detailed_example": "body { color: #222; font-family: system-ui, -apple-system, 'Segoe UI', Roboto; }"
+  },
+  {
+    "name": "column-count",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Specifies the number of columns an element should be divided into.",
+    "example": "column-count: 3;",
+    "detailed_example": ".magazine { column-count: 3; column-gap: 20px; }\n.article { break-inside: avoid-column; }"
+  },
+  {
+    "name": "column-gap",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Specifies the gap between columns in a multi-column layout.",
+    "example": "column-gap: 16px;",
+    "detailed_example": ".news { column-count: 2; column-gap: 24px; }"
+  },
+  {
+    "name": "column-rule",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Shorthand for setting column-rule-width, column-rule-style, and column-rule-color.",
+    "example": "column-rule: 1px solid #ddd;",
+    "detailed_example": ".listing { column-count: 2; column-rule: 1px solid #eee; }"
+  },
+  {
+    "name": "column-rule-color",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Sets the color of the rule between columns.",
+    "example": "column-rule-color: #ccc;",
+    "detailed_example": ".text-cols { column-rule: 1px solid #ddd; }\n/* You can change the color independently */"
+  },
+  {
+    "name": "column-rule-style",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Sets the style of the rule between columns (solid, dashed, dotted, etc.).",
+    "example": "column-rule-style: dashed;",
+    "detailed_example": ".mag { column-rule: 1px dashed #ccc; }"
+  },
+  {
+    "name": "column-rule-width",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Sets the width of the rule between columns.",
+    "example": "column-rule-width: 2px;",
+    "detailed_example": ".cols { column-rule-width: 2px; column-count: 3; }"
+  },
+  {
+    "name": "column-span",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Specifies whether an element should span across all columns (none or all).",
+    "example": "column-span: all;",
+    "detailed_example": "h2 { column-span: all; }\n/* Make headings span full width across columns */"
+  },
+  {
+    "name": "column-width",
+    "type": "property",
+    "group": "Layout",
+    "sub-category": "Multi-column",
+    "description": "Specifies an ideal column width. The browser determines how many columns will fit.",
+    "example": "column-width: 200px;",
+    "detailed_example": ".feed { column-width: 240px; column-gap: 20px; }"
+  },
+  {
+    "name": "contain",
+    "type": "property",
+    "group": "Performance",
+    "sub-category": "Containment",
+    "description": "Indicates which aspects of an element are self-contained for layout, style, and paint (layout, style, paint, size, content).",
+    "example": "contain: layout paint;",
+    "detailed_example": ".widget { contain: layout paint; }\n/* Helps browsers optimize rendering */"
+  },
+  {
+    "name": "content",
+    "type": "property",
+    "group": "Generated Content",
+    "sub-category": "Pseudo-elements",
+    "description": "Specifies generated content for ::before and ::after pseudo-elements.",
+    "example": "a::after { content: ' ↗'; }",
+    "detailed_example": "a.external::after {\n  content: ' ↗';\n  font-size: 0.9em;\n}\n/* Use with ::before/::after */"
+  },
+  {
+    "name": "counter-increment",
+    "type": "property",
+    "group": "Counters",
+    "sub-category": "Counters",
+    "description": "Specifies counters to increment when an element is generated.",
+    "example": "counter-increment: section;",
+    "detailed_example": "body { counter-reset: section; }\nh2 { counter-increment: section; }\nh2::before { content: counter(section) \". \"; }"
+  },
+  {
+    "name": "counter-reset",
+    "type": "property",
+    "group": "Counters",
+    "sub-category": "Counters",
+    "description": "Creates or resets CSS counters.",
+    "example": "counter-reset: item;",
+    "detailed_example": "ol.custom { counter-reset: item; }\nli::before { counter-increment: item; content: counter(item) '. '; }"
+  },
+  {
+    "name": "cursor",
+    "type": "property",
+    "group": "UI",
+    "sub-category": "Cursor",
+    "description": "Specifies the mouse cursor to be displayed when the pointer is over an element.",
+    "example": "cursor: pointer;",
+    "detailed_example": ".clickable { cursor: pointer; }\n.draggable { cursor: grab; }"
+  }
+]

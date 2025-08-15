@@ -1,0 +1,226 @@
+[
+  {
+    "name": "*",
+    "type": "selector",
+    "category": "Selector",
+    "sub-category": "Universal",
+    "description": "Selects all elements.",
+    "example": "* { margin: 0; padding: 0; }"
+  },
+  {
+    "name": "a",
+    "type": "selector",
+    "category": "Selector",
+    "sub-category": "Type",
+    "description": "Selects all <a> elements.",
+    "example": "a { color: blue; }"
+  },
+  {
+    "name": ".class",
+    "type": "selector",
+    "category": "Selector",
+    "sub-category": "Class",
+    "description": "Selects all elements with the specified class.",
+    "example": ".highlight { background: yellow; }"
+  },
+  {
+    "name": "#id",
+    "type": "selector",
+    "category": "Selector",
+    "sub-category": "ID",
+    "description": "Selects an element with the specified ID.",
+    "example": "#main { width: 80%; }"
+  },
+  {
+    "name": ":hover",
+    "type": "selector",
+    "category": "Selector",
+    "sub-category": "Pseudo-class",
+    "description": "Selects an element when the mouse pointer is over it.",
+    "example": "button:hover { background: lightblue; }"
+  },
+  {
+    "name": "::before",
+    "type": "selector",
+    "category": "Selector",
+    "sub-category": "Pseudo-element",
+    "description": "Inserts generated content before an element's content.",
+    "example": "p::before { content: 'Note: '; }"
+  },
+  {
+    "name": "align-content",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Flexbox/Grid",
+    "description": "Aligns flex container's lines within it when there is extra space in the cross-axis.",
+    "example": "align-content: space-between;"
+  },
+  {
+    "name": "align-items",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Flexbox",
+    "description": "Aligns flex items along the cross axis.",
+    "example": "align-items: center;"
+  },
+  {
+    "name": "background-color",
+    "type": "property",
+    "category": "Background",
+    "sub-category": "Color",
+    "description": "Sets the background color of an element.",
+    "example": "background-color: #ff0000;"
+  },
+  {
+    "name": "background-image",
+    "type": "property",
+    "category": "Background",
+    "sub-category": "Image",
+    "description": "Sets the background image for an element.",
+    "example": "background-image: url('image.jpg');"
+  },
+  {
+    "name": "border",
+    "type": "property",
+    "category": "Border",
+    "sub-category": "Shorthand",
+    "description": "Sets border width, style, and color in one declaration.",
+    "example": "border: 1px solid black;"
+  },
+  {
+    "name": "color",
+    "type": "property",
+    "category": "Text",
+    "sub-category": "Color",
+    "description": "Sets the color of text.",
+    "example": "color: blue;"
+  },
+  {
+    "name": "display",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Display",
+    "description": "Specifies the display behavior of an element.",
+    "example": "display: flex;"
+  },
+  {
+    "name": "flex",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Flexbox",
+    "description": "Shorthand for flex-grow, flex-shrink, and flex-basis.",
+    "example": "flex: 1 1 auto;"
+  },
+  {
+    "name": "font-size",
+    "type": "property",
+    "category": "Typography",
+    "sub-category": "Font",
+    "description": "Specifies the size of the font.",
+    "example": "font-size: 16px;"
+  },
+  {
+    "name": "grid-template-columns",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Grid",
+    "description": "Specifies the column sizes of a grid container.",
+    "example": "grid-template-columns: 200px 1fr;"
+  },
+  {
+    "name": "height",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Sizing",
+    "description": "Specifies the height of an element.",
+    "example": "height: 100px;"
+  },
+  {
+    "name": "margin",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Spacing",
+    "description": "Sets the outer margin of an element.",
+    "example": "margin: 10px;"
+  },
+  {
+    "name": "padding",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Spacing",
+    "description": "Sets the inner padding of an element.",
+    "example": "padding: 10px;"
+  },
+  {
+    "name": "position",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Positioning",
+    "description": "Specifies the positioning method for an element.",
+    "example": "position: absolute;"
+  },
+  {
+    "name": "transform",
+    "type": "property",
+    "category": "Transform",
+    "sub-category": "2D/3D",
+    "description": "Applies a 2D or 3D transformation to an element.",
+    "example": "transform: rotate(45deg);"
+  },
+  {
+    "name": "z-index",
+    "type": "property",
+    "category": "Layout",
+    "sub-category": "Stacking",
+    "description": "Specifies the stack order of elements.",
+    "example": "z-index: 10;"
+  },
+  {
+    "name": "calc()",
+    "type": "function",
+    "category": "Math",
+    "sub-category": "Length",
+    "description": "Performs calculations to determine CSS property values.",
+    "example": "width: calc(100% - 50px);"
+  },
+  {
+    "name": "clamp()",
+    "type": "function",
+    "category": "Math",
+    "sub-category": "Range",
+    "description": "Clamps a value between a minimum and maximum.",
+    "example": "font-size: clamp(1rem, 2vw, 2rem);"
+  },
+  {
+    "name": "linear-gradient()",
+    "type": "function",
+    "category": "Image",
+    "sub-category": "Gradient",
+    "description": "Creates an image consisting of a progressive transition between two or more colors along a straight line.",
+    "example": "background: linear-gradient(to right, red, blue);"
+  },
+  {
+    "name": "var()",
+    "type": "function",
+    "category": "Variable",
+    "sub-category": "Custom Properties",
+    "description": "Retrieves the value of a custom property (CSS variable).",
+    "example": "color: var(--main-color);"
+  },
+  {
+    "name": "@media",
+    "type": "at-rule",
+    "category": "Conditional",
+    "sub-category": "Media Queries",
+    "description": "Applies styles based on device/media characteristics.",
+    "example": "@media (max-width: 600px) { body { font-size: 14px; } }"
+  },
+  {
+    "name": "@keyframes",
+    "type": "at-rule",
+    "category": "Animation",
+    "sub-category": "Keyframes",
+    "description": "Defines keyframes for CSS animations.",
+    "example": "@keyframes slidein { from { transform: translateX(0%); } to { transform: translateX(100%); } }"
+  }
+]

@@ -1,0 +1,63 @@
+/* Style to hide the example code initially */
+        .card-example {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            opacity: 0;
+            padding-top: 0;
+            pointer-events: none; /* Prevents text selection on hidden element */
+        }
+
+        /* Style to show the example code when the card is expanded */
+        .card--expanded .card-example {
+            max-height: 500px; /* A large enough value to allow smooth transition */
+            opacity: 1;
+            padding-top: 0.5rem;
+            pointer-events: auto;
+        }
+
+        /* Custom style for the title font and body font */
+        .title-font {
+            font-family: 'Lato', sans-serif;
+        }
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Noctua Color Palette */
+        .bg-noctua-brown { background-color: #653024; }
+        .text-noctua-brown { color: #653024; }
+        .bg-noctua-beige { background-color: #e7ceb5; }
+        .text-noctua-beige { color: #e7ceb5; }
+        .bg-noctua-light-gray { background-color: #f5f5f5; }
+        .bg-noctua-medium-gray { background-color: #d1d1d1; }
+        .hover-bg-noctua-beige:hover { background-color: #e7ceb5; }
+
+        /* Dropdown menu animation */
+        #dropdown-menu {
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            overflow: hidden;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+
+        #dropdown-menu.dropdown-menu--open {
+            max-height: 200px; /* Sufficient height for the menu items */
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .main-container {
+            background-color: aqua;
+            height: 400px;
+            width: 400px;
+        }
+        
+        .category-container {
+            background-color: rgb(93, 28, 66);
+            height: 400px;
+            width: 400px;
+        }
