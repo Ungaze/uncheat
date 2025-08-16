@@ -61,3 +61,29 @@
             height: 400px;
             width: 400px;
         }
+
+        .card {
+            background-color: aquamarine;
+        }
+
+        .card-header {
+            background-color: #653024;
+        }
+
+        .card-body {
+            background-color: #e7ceb5;
+        }
+
+        .card-extra {
+            background-color: darkolivegreen;
+        }
+
+        .main-holder {
+            background-color: #c1baba;
+            columns: 20rem;
+        }
+
+        .hide {
+            display: none;
+            visibility: hidden;
+        }
