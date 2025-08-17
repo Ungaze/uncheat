@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==== DOM References ====
-    const buttonContainer = document.getElementById('button-parent');
-    const mainContent = document.getElementById('main');
+    const buttonContainer = document.getElementById('language-button-container');
+    const mainContent = document.getElementById('content');
     const toggle = document.getElementById('group-toggle');
     const search = document.getElementById('search-input');
     let searchString;
