@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==== DOM References ====
     const buttonContainer = document.getElementById('language-button-container');
     const mainContent = document.getElementById('content');
-    const toggle = document.getElementById('group-toggle');
+    // const toggle = document.getElementById('group-toggle');
     const search = document.getElementById('search-input');
+    const clear = document.getElementById('clear-btn');
+    const clearImage = document.getElementById('clear-img');
+
     let searchString;
 
     // ==== Data Sources (JSON files to load) ====
@@ -14,6 +17,39 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let masterData = {};
+
+
+    // (function() {
+    //     function setPhysicalFontSize(cm) {
+    //         // Create hidden test element of 1 inch
+    //         const test = document.createElement("div");
+    //         test.style.width = "1in";
+    //         test.style.height = "1in";
+    //         test.style.position = "absolute";
+    //         test.style.left = "-100%";
+    //         document.body.appendChild(test);
+
+    //         // Get actual pixels per inch
+    //         const ppi = test.offsetWidth;
+    //         document.body.removeChild(test);
+
+    //         // Convert cm to px (1in = 2.54cm)
+    //         const px = (ppi / 2.54) * cm;
+
+    //         // Apply to root element
+    //         document.documentElement.style.fontSize = px + "px";
+    //     }
+    //     // Run once on load
+    //     function updateFont() {
+    //         setPhysicalFontSize(0.4);
+    //     }
+        
+    //     //window.addEventListener("load", updateFont);
+    //     //window.addEventListener("resize", updateFont);
+
+    //     // Some browsers don’t resize-trigger properly on zoom/devicePixelRatio changes
+    //     //setInterval(updateFont, 500); // safety net, updates tice per second
+    // })();
 
     // ==== Load JSON files safely ====
     async function loadData(file) {
@@ -70,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateCards(category) {
         const cards = {};
         for (const element of category.data) {
-            cards[element.name] = new Card(element);
+            cards[element.name] = new Card(element, category.name);
         }
         return cards;
     }
@@ -80,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Language button
         const button = document.createElement('button');
         button.className = 'language-button';
+        button.classList.add('styling')
         button.textContent = category.name;
         button.id = category.name;
         buttonContainer.appendChild(button);
@@ -95,12 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create group sections based on unique category names
         const uniqueCategories = Array.from(new Set(category.data.map(item => item.category)));
         for (let cat of uniqueCategories) {
-            const newCategory = document.createElement('div');
-            newCategory.className = 'group-holder';
-            newCategory.id = cat;
-            newCategory.textContent = cat;
-            holder.group[cat] = newCategory;
-            holder.main.appendChild(newCategory);
+            const categoryContainer = document.createElement('div');
+            categoryContainer.className = 'no-break group-holder'
+            const header = document.createElement('div');
+            header.classList = 'group-header title';
+            header.textContent = cat;
+            categoryContainer.appendChild(header);
+            categoryContainer.id = cat;
+            holder.group[cat] = categoryContainer;
+            holder.main.appendChild(categoryContainer);
         }
 
         return { button, holder };
@@ -133,19 +173,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 buttons[key].addEventListener('click', () => {
                     this.#display.language = key;
                     this.displayCards();
+                    for (const key in buttons) {
+                        buttons[key].classList.remove('pressed');
+                    }
+                    // buttons.forEach(b => b.classList.remove("pressed"));
+    // apply pressed state to the clicked one
+    buttons[key].classList.add("pressed");
                 });
             }
 
             // Toggle grouping (grouped vs ungrouped view)
-            toggle.addEventListener('click', () => {
-                this.#display.grouped = !this.#display.grouped;
-                this.displayCards();
-            });
+            // toggle.addEventListener('click', () => {
+            //     this.#display.grouped = !this.#display.grouped;
+            //     this.displayCards();
+            // });
 
             // Search filtering
             search.addEventListener('input', e => {
                 searchString = e.target.value.toLowerCase();
                 this.search();
+                clearImage.classList.toggle('visible', e);
+            });
+
+            clear.addEventListener('click', () => {
+                searchString = "";
+                search.value = "";
+                this.search();
+                clearImage.classList.remove('visible');
             });
 
             this.#cards = cards;
@@ -212,16 +266,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         cards[card.name].toggle(false);
                     }
                 }
-                return;
+                // return;
+            } else {
+                for (const cardName in cards) {
+                    cards[cardName].toggle(true);
+                }
+                for (const group in groups) {
+                    groups[group].classList.toggle('hide', !isGrouped);
+                }
             }
 
             // No search → show all cards/groups
-            for (const cardName in cards) {
-                cards[cardName].toggle(true);
-            }
-            for (const group in groups) {
-                groups[group].classList.toggle('hide', !isGrouped);
-            }
+            
+            
+            // console.log(this.#holders[this.#display.language].main.classList);
+            //this.#holders[this.#display.language].main.classList.toggle('flex', isGrouped);
+            //this.#holders[this.#display.language].main.classList.toggle('column', !isGrouped);
+            // if (isGrouped) {
+            //     groups[this.#display.language].classList.add('flex');
+            // } else {
+            //     groups[this.#display.language].classList.add('column');
+            // }
+            console.log(`searching for: ${searchString}/${searchString ? true : false} value, within ${this.#display.language} with grouping = ${this.#display.grouped}`);
         }
 
         // Manual toggles (optional extra methods)
@@ -241,15 +307,19 @@ document.addEventListener('DOMContentLoaded', () => {
         #element = document.createElement('div');
         #category;
 
-        constructor(cardData) {
+        constructor(cardData, cardLang) {
             // Main sections of a card
+            const main = document.createElement('div');
             const header = document.createElement('div');
             const body = document.createElement('div');
             const extra = document.createElement('div');
 
-            this.#element.append(header, body, extra);
+            this.#element.append(main, extra);
+            main.append(header, body);
             this.#element.className = 'card';
-            header.className = 'card-header';
+            main.className = 'card-main';
+            header.className = `card-header ${cardLang}`;
+            // console.log(header.classList);
             body.className = 'card-body';
             extra.className = 'card-extra';
 
@@ -257,14 +327,16 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const key in cardData) {
                 const element = document.createElement('p');
                 element.className = key;
-                element.textContent = `${cardData[key]}`;
+                element.textContent = `${cardData[key].replace(/\./g, ".\u200B")}`;
                 switch (key) {
                     case 'name':
                         header.appendChild(element);
+                        element.classList.add('card-title');
                         break;
                     case 'category':
                         this.#category = cardData[key];
-                        header.appendChild(element);
+                        //body.appendChild(element);
+                        element.classList.add('card-category');
                         break;
                     case 'description':
                         body.appendChild(element);

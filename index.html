@@ -8,23 +8,22 @@
 </head>
 <body class="bg-noctua-beige font-roboto antialiased">
     <header>
-        <div>
-            <div id="top-header">
+        <div id="main-header">
+            <div id="header-title">
                 <h1 class="no-wrap">UNCHEAT SHEET</h1>
-                <div id="language-button-container"></div>
             </div>
-            <div id="bottom-header">
-                <div id="search-container" class="no-wrap">
-                    <input id="search-input" />
-                    <button id="clear-search-btn"></button>
-                    <!-- <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+            
+        </div>
+        <div id="ui-header">
+            <div id="search-container" class="no-wrap">
+                <input type="text" id="search-input" autocomplete="off" placeholder="Search . . . . ." />
+                <button id="clear-btn" class="hidden">
+                    <svg id="clear-img" class="x" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                    </svg> -->
-                </div>
-                <div>
-                    <label for="group-toggle">Group by Category <input id="group-toggle" type="checkbox" /></label>
-                </div>
+                    </svg>
+                </button>
             </div>
+            <div id="language-button-container"></div>
         </div>
     </header>
 
